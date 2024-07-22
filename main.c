@@ -105,19 +105,6 @@ void random_dot(){
 	
 }
 
-/*
-void button(){
-	if(PINA == 0b10000000){
-		dir[0]=2;
-	}else if(PINA == 0b01000000){
-		dir[0]=4;
-	}else if(PINA == 0b00100000){
-		dir[0]=3;
-	}else if(PINA == 0b00010000){
-		dir[0]=1;
-	}
-	
-}*/
 void printBye(){
 	unsigned char i;
 	for(i=0;i<3;i++){
@@ -246,12 +233,6 @@ void checkAndChangeDirection(){
 }
 
 
-// checkAndChangeDirection --> move --> updateDir (loop for not to confuse snake movement)
-
-/*	1 --> RIGHT: 7 is right-most columnn (row(-1))
-	3 --> LEFT: 0 is left-most columnn (row(+1))
-	2 --> UP: 7 is up-most row (column(+1))
-	4 --> DOWN: 0 is down-most row (column(-1))
 												*/
 void move(int direc, int i){
 	if(direc==1){
@@ -283,7 +264,7 @@ void moveSnake(){
 	}
 }
 
-void updateDir(){	// change the directions for the next move, shifts the directions of each point of snake. 
+void updateDir(){	
 	unsigned char tempDir[snakeLength];
 	
 	tempDir[0]=dir[0];
@@ -433,7 +414,7 @@ int main(void)
 	
 	while(1){
 		display();
-		_delay_ms(300);	// Interrupt ile x-y change bakýyor.
+		_delay_ms(300);	// Interrupt ile x-y change bakÃ½yor.
 		
 		checkAndChangeDirection();
 		//button();
@@ -473,12 +454,3 @@ ISR (ADC_vect) {
 	
 	changeInDir = joyStickDirectChange();
 }
-
-/*	Joystick monte etme ve yön komutu alma
-	Random Number Generatorda bazý ineklikler var
-	Hýz deðiþtirme vs eklenebilir
-	Raporda buton ve sevseg kullanýcaz diye bir þey demiþ olabilirim, ona göre bir iki özellik eklemek lazým
-	Zaten projede hocanýn öðrettiði 3 þeyi kullandýðýmýzdan da emin olmazmýz gerekiyor idü.
-	random dot snake e denk gelmesin
-																											*/
-		
