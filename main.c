@@ -38,7 +38,7 @@ void resetGame(){
 }
 
 
-int absulate(int c){
+int absolute(int c){
 	if (c<0) return c*(-1);
 	else return c;
 	
