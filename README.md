@@ -1,2 +1,2 @@
 # Snake-Game
-Snake Game using Arduino Nano and 8x8 LED Matrix
+Snake Game using ATMega32 and 8x8 LED Matrix
