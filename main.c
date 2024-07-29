@@ -202,7 +202,7 @@ unsigned char joyStickDirectChange(){
 	
 	if (!(dirX==0 || dirY==0))
 	{
-		if(absulate (mean-jsX) > absulate (mean-jsY)){
+		if(absolute (mean-jsX) > absolute (mean-jsY)){
 			return (-1)*dirX + 2;
 		}else{
 			return dirY+3;
